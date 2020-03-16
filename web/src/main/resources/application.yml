@@ -1,0 +1,13 @@
+
+server:
+  port: 8090
+
+spring: 
+  application: 
+    name: service-web
+  cloud: 
+    zookeeper:
+      connect-string: localhost:2181
+      discovery: 
+        enabled: true
+        register: true

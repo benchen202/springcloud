@@ -1,0 +1,18 @@
+server:
+  port: 8070
+
+spring: 
+  application: 
+    name: service-gateway
+  cloud: 
+    zookeeper:
+      connect-string: localhost:2181
+      discovery: 
+        enabled: true
+        register: false
+    gateway: 
+      routes:
+      - id: service_web
+        uri: lb://service-web
+        predicates:
+        - Path= /gw/**
